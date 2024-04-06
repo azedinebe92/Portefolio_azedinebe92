@@ -1,0 +1,436 @@
+<html lang="en">
+<head>
+  <title>Portefolio en Bootstrap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 15px/1.8 Lato, sans-serif;
+    color: #777;
+  }
+  h3, h4 {
+    margin: 10px 0 30px 0;
+    letter-spacing: 10px;      
+    font-size: 20px;
+    color: #111;
+  }
+  
+  h1, h2 {
+    text-align: center;
+  }
+  
+  .container {
+    padding: 80px 120px;
+  }
+  .person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+  }
+  .person:hover {
+    border-color: #f1f1f1;
+  }
+  .carousel-inner img {
+    -webkit-filter: grayscale(90%);
+    filter: grayscale(90%); /* make all photos black and white */ 
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+  }
+  .carousel-caption h3 {
+    color: #fff !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+  .bg-1 {
+    background: #2d2d30;
+    color: #bdbdbd;
+  }
+  .bg-1 h3 {color: #fff;}
+  .bg-1 p {font-style: italic;}
+  .list-group-item:first-child {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  .list-group-item:last-child {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail p {
+    margin-top: 15px;
+    color: #555;
+  }
+  .btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #f1f1f1;
+    border-radius: 0;
+    transition: .2s;
+  }
+  .btn:hover, .btn:focus {
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #000;
+  }
+  .modal-header, h4, .close {
+    background-color: #333;
+    color: #fff !important;
+    text-align: center;
+    font-size: 30px;
+  }
+  .modal-header, .modal-body {
+    padding: 40px 50px;
+  }
+  .nav-tabs li a {
+    color: #777;
+  }
+  #googleMap {
+    width: 100%;
+    height: 400px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }  
+  .navbar {
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity: 0.9;
+  }
+  .navbar li a, .navbar .navbar-brand { 
+    color: #d5d5d5 !important;
+  }
+  .navbar-nav li a:hover {
+    color: #fff !important;
+  }
+  .navbar-nav li.active a {
+    color: #fff !important;
+    background-color: #29292c !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+  }
+  .open .dropdown-toggle {
+    color: #fff;
+    background-color: #555 !important;
+  }
+  .dropdown-menu li a {
+    color: #000 !important;
+  }
+  .dropdown-menu li a:hover {
+    background-color: red !important;
+  }
+  footer {
+    background-color: #2d2d30;
+    color: #f5f5f5;
+    padding: 32px;
+  }
+  footer a {
+    color: #f5f5f5;
+  }
+  footer a:hover {
+    color: #777;
+    text-decoration: none;
+  }  
+  .form-control {
+    border-radius: 0;
+  }
+  textarea {
+    resize: none;
+  }
+
+
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+      }
+  th {
+     background-color: #29292c;
+     }
+  
+  
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">Portefolio</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">ACCEUIL</a></li>
+        <li><a href="#band">SQL</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">PROJET
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="java.html">Projet Java</a></li>
+            <li><a href="html_css.html">Projet HTML/CSS</a></li>
+            <li><a href="sql.html">Projet SQL</a></li> 
+          </ul>
+        </li>
+        <li><a href="index.html">RETOUR</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="sql.png" alt="SQL" width="1200" height="700">
+        <div class="carousel-caption">
+          <h3>SQL</h3>
+          <p>C'est un langage qu'on utilise pour programmer en orienté objet (POO).</p>
+        </div>      
+      </div>
+    </div>
+</div>
+
+<!-- Container (The Band Section) -->
+<div id="band" class="container text-center">
+  <h3>SQL</h3>
+  <p><em>Voici mes projets SQL!</em></p>
+  <p>Bonjour a tous, ici vous trouverez mes projets sql que j'ai pu réalisé au cours de ma scolarité ou dans le cadre personelle. Ce portefolio est mis a jours quotidiennement pour pouvoir suivre ma progression au cours de mes etudes.</p>
+  <br>
+</div>
+
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#home">Modélisation MCD</a></li>
+  <li><a data-toggle="tab" href="#menu1">BD - Coupe du monde</a></li>
+  <li><a data-toggle="tab" href="#menu2">Projet 3...</a></li>
+</ul>
+<div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h2>Conception BD via interview</h2>
+      <p>
+	  <h1>1. INTERVIEW</h1>
+<p>Voici l’interview de Yamina BENAZZI, employé du Crédit Agricole Assurance, en tant que Product Owner. Cette entreprise vend aux clients des contrats d’assurances dans différents domaines (assurance habitation, voiture…)</p>
+
+<h2>1) Avez-vous déjà réalisé la base de votre entreprise ?</h2>
+<p>Oui j’ai réalisé le modèle de données du Crédit Agricole Assurance. En effet l’entreprise a lancé un projet de refonte de leur SID (Système d’Information décisionnel) pour améliorer le pilotage de l’entreprise. L’ancienne Base de données développée avec Oracle devenait de moins en moins performante pour répondre aux différents demandes d’analyse des données des métiers.</p>
+
+<h2>2) A quoi servent vos bases de données dans votre entreprise ?</h2>
+<p>La base de données sert à :</p>
+<ul>
+    <li>Collecter les données en provenance des systèmes de gestion. Ces données peuvent provenir de différents systèmes de gestion (par ex gestion des contrats d’assurance, des personnes, des sinistres…).</li>
+    <li>Centraliser toutes les données qui viennent de différents systèmes dans une seule base de données pour les mettre à disposition des métiers pour leur permettre de faire des analyses par exemple :
+        <ul>
+            <li>suivre le chiffre d’affaire réalisé par agence et par mois</li>
+            <li>savoir si un client possède uniquement un contrat d’assurance pour son véhicule pour lui proposer d’autres contrats…</li>
+        </ul>
+    </li>
+</ul>
+
+<h2>3) Combien de base de données disposez-vous ?</h2>
+<p>L’entreprise possède deux bases de données :</p>
+<ul>
+    <li>une base de données pour stocker les données des systèmes de gestion</li>
+    <li>une base de données décisionnelles où sont récupérées toutes les données des systèmes de gestion afin de pouvoir faire des analyses. Dans cette base de données, les données sont historisées.</li>
+</ul>
+
+<h2>4) Comment identifiez-vous un client de la base de données ?</h2>
+<p>La base de données fournit des informations organisées en table ou relation. Elle contient une table (CLIENT) qui permet de stocker l’ensemble des clients du Crédit Agricole. Cette table contient un identifiant unique par client (numClient) et des informations sur le client : nom, prénom, date de naissance, etc…</p>
+
+<h2>5) Avez-vous déjà rencontré des problèmes avec votre base de données ?</h2>
+<p>Les principaux problèmes rencontrés sont :</p>
+<ul>
+    <li>Problème de performance, les requêtes SQL permettant d’accéder aux données sont trop longues, ou tombent en erreur.</li>
+    <li>Problème de qualité de données :
+        <ul>
+            <li>Les tables contiennent des doublons (par ex un client est présent deux fois dans la même table avec deux noms différents)</li>
+            <li>Les relations entre les tables ne sont pas respectées, par ex on ne retrouve pas le client rattaché à un contrat</li>
+        </ul>
+    </li>
+</ul>
+<h1>2. MCD</h1>
+<h2>Voici le MCD réalisé suite à l’échange avec Yamina BENAZZI: </h2>
+<img src="MCD_Interview.PNG" alt="SQL" width="900" height="400">
+<h1>3. Dictionnaire de données</h1>
+<h2>Voici le dictionnaire de données du MCD :</h2>
+<table>
+    <tr>
+        <th>NOM RUBRIQUE</th>
+        <th>TYPE</th>
+        <th>DESCRIPTION</th>
+    </tr>
+    <tr>
+        <td>numClient</td>
+        <td>A</td>
+        <td>Numéro de client</td>
+    </tr>
+    <tr>
+        <td>nomClient</td>
+        <td>A</td>
+        <td>Nom du client</td>
+    </tr>
+    <tr>
+        <td>prenomClient</td>
+        <td>A</td>
+        <td>Prénom du client</td>
+    </tr>
+    <tr>
+        <td>dateNaissance</td>
+        <td>A</td>
+        <td>Date de naissance du client</td>
+    </tr>
+    <tr>
+        <td>numAgence</td>
+        <td>A</td>
+        <td>Numéro de l’agence</td>
+    </tr>
+    <tr>
+        <td>nomAgence</td>
+        <td>A</td>
+        <td>Nom de l’agence</td>
+    </tr>
+    <tr>
+        <td>adresseAgence</td>
+        <td>A</td>
+        <td>Adresse de l’agence</td>
+    </tr>
+    <tr>
+        <td>numContrat</td>
+        <td>A</td>
+        <td>Numéro de contrat</td>
+    </tr>
+    <tr>
+        <td>dateSignature</td>
+        <td>A</td>
+        <td>Date de signature du contrat</td>
+    </tr>
+    <tr>
+        <td>dateFinContrat</td>
+        <td>A</td>
+        <td>Date de fin du contrat</td>
+    </tr>
+    <tr>
+        <td>numOffre</td>
+        <td>A</td>
+        <td>Numéro de l’offre</td>
+    </tr>
+    <tr>
+        <td>nomOffre</td>
+        <td>A</td>
+        <td>Nom de l’offre</td>
+    </tr>
+    <tr>
+        <td>prixOffreHT</td>
+        <td>A</td>
+        <td>Prix de l’offre HT</td>
+    </tr>
+    <tr>
+        <td>prixOffreTTC</td>
+        <td>C</td>
+        <td>Prix de l’offre TTC (Prix HT * TVA)</td>
+    </tr>
+    <tr>
+        <td>TVA</td>
+        <td>P</td>
+        <td>Taux de TVA (fixe)</td>
+    </tr>
+    <tr>
+        <td>numVehicule</td>
+        <td>A</td>
+        <td>Numéro de véhicule</td>
+    </tr>
+    <tr>
+        <td>ImmatVehicule</td>
+        <td>A</td>
+        <td>Immatriculation du véhicule</td>
+    </tr>
+    <tr>
+        <td>marqueVehicule</td>
+        <td>A</td>
+        <td>Marque du véhicule</td>
+    </tr>
+    <tr>
+        <td>DatePremiereCircu</td>
+        <td>A</td>
+        <td>Date de première mise en circulation</td>
+    </tr>
+    <tr>
+        <td>numEmployé</td>
+        <td>A</td>
+        <td>Numéro de l’employé</td>
+    </tr>
+    <tr>
+        <td>nomEmployé</td>
+        <td>A</td>
+        <td>Nom de l’employé</td>
+    </tr>
+    <tr>
+        <td>prenomEmploye</td>
+        <td>A</td>
+        <td>Prénom de l’employé</td>
+    </tr>
+    <tr>
+        <td>FonctionEmploye</td>
+        <td>A</td>
+        <td>Fonction de l’employé</td>
+    </tr>
+</table>
+</p>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h2>BD - Coupe du monde</h2>
+      <p>Voici un projet en SQL que j'ai créé qui consiste a avoir une base de donnée d'un tournois de la coupe du monde. J'ai utiliser MySQL Workbench pour la creation de la base de donnée.</p>
+	  <p>Voici une image de la base de donnée: <img src="BD_coupe_du_monde.PNG" alt="JAVA" width="700" height="400"></p>
+	  <p>J'ai aussi fais des intertions de données dans la base pour pouvoir faire des tests. </p>
+	  <p>Voici une image des types de requete utiliser: <img src="Test1Coupe_du_monde.PNG" alt="JAVA" width="700" height="300"></p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h2>Projet 3...</h2>
+      <p>Descriptif du projet 3...</p>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Footer -->
+<footer class="text-center">
+  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+  </a><br><br>
+  <p>GitHub: <a href="https://github.com/azedinebe92" data-toggle="tooltip" title="Visiter mon GitHub">Mettre mon lien GitHub</a></p> 
+</footer>
+
+
+</body>
+</html>
